@@ -10,7 +10,7 @@
 body {
     font-family: 'Inter', sans-serif;
     /* Menggunakan asas gradasi CEdX UC yang dinamis untuk background dasar browser */
-    background: radial-gradient(circle at 70% 80%, #ff834f 0%, #e9571e 40%, #5d44f7 100%);
+    background: radial-gradient(circle at 30% 70%, #ff834f 0%, #e9571e 35%, #2a1b4e 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -52,7 +52,7 @@ body::before {
     /* --- PANDUAN BINGKAI SMARTPHONE --- */
     padding: 36px 28px;
     /* Efek gradasi di dalam hape dibuat semi-transparan agar menyatu dengan background browser */
-    background: radial-gradient(circle at 70% 80%, rgba(255, 131, 79, 0.15) 0%, rgba(233, 87, 30, 0.1) 40%, rgba(93, 68, 247, 0.2) 100%);
+    background: radial-gradient(circle at 30% 70%, rgba(255, 131, 79, 0.15) 0%, rgba(233, 87, 30, 0.1) 40%, rgba(42, 27, 78, 0.4) 100%);
     border-radius: 40px; /* Sudut melengkung ekstrem khas HP modern */
     
     /* Efek Kaca Frosting & Border Ganda agar Terpisah dari BG Luar */

@@ -10,7 +10,7 @@
 body {
     font-family: 'Inter', sans-serif;
     /* UPDATE: Mengganti background hitam kaku dengan gradasi oranye CEdX UC yang dinamis */
-    background: radial-gradient(circle at 30% 20%, #ff834f 0%, #e9571e 50%, #b83605 100%);
+    background: radial-gradient(circle at 30% 70%, #ff834f 0%, #e9571e 35%, #2a1b4e 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
