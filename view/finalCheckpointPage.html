@@ -28,7 +28,7 @@
                 </svg>
             </div>
 
-            <h2 class="question-text">"What would you name as the core learning of this semester?"</h2>
+            <h2 class="question-text" id="random-question">"What would you name as the core learning of this semester?"</h2>
 
             <div class="textarea-container">
                 <textarea class="reflection-input" placeholder="Write your thoughts..." rows="8"></textarea>
@@ -51,7 +51,8 @@
                 <span class="dot"></span>
                 <span class="dot"></span>
                 <span class="dot"></span>
-                <span class="dot active"></span> <span class="dot"></span>
+                <span class="dot active"></span> 
+                <span class="dot"></span>
             </div>
 
             <a href="../view/shareSnapshotPage.html" class="btn-next" aria-label="Next Page">
@@ -62,6 +63,42 @@
         </footer>
         
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Kumpulan pertanyaan refleksi (Duplikasi telah dihapus)
+            const questions = [
+                "Six months from now, what would you like to do?",
+                "What kind of impact do you want to continue or deepen?",
+                "What challenged you in a way that helped you grow?",
+                "Which activities felt aligned with how you want to grow?",
+                "Where did you step outside your comfort zone, even briefly?",
+                "What did you learn from situations that did not go as expected?",
+                "What experiences reflected what matters most to you right now?",
+                "When did you feel that your contribution mattered?",
+                "What did you learn about working with different people or perspectives?",
+                "What roles or responsibilities felt most aligned with your values?",
+                "What patterns did you notice in how you approached challenges?",
+                "What lessons from this semester feel worth carrying forward?",
+                "What small, realistic step are you willing to commit to trying?",
+                "What does a meaningful next semester look like for you personally?",
+                "What is one capability you want to rely on more confidently?",
+                "Where did preparation help you, and where did adaptability matter more?",
+                "At the end of next semester, what evidence would tell you that you moved forward?",
+                "What would you name as the core learning of this semester?",
+                "What would progress look like in a realistic, personal sense?"
+            ];
+
+            // Mengambil satu indeks acak dari array
+            const randomIndex = Math.floor(Math.random() * questions.length);
+            
+            // Memilih pertanyaan berdasarkan indeks acak tersebut
+            const chosenQuestion = questions[randomIndex];
+
+            // Menampilkan pertanyaan ke dalam elemen HTML dengan tanda petik pembungkus
+            document.getElementById("random-question").innerText = `"${chosenQuestion}"`;
+        });
+    </script>
 
 </body>
 </html>
