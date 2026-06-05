@@ -1,0 +1,277 @@
+/* ==========================================================================
+   1. RESET & BASE STYLES (CEdX UC THEME CONSISTENCY)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle at 30% 70%, #ff834f 0%, #e9571e 35%, #2a1b4e 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Pola Grid Digital Halus Latar Belakang */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+/* Bingkai Smartphone Flagship Tiruan */
+.mobile-container {
+    width: 100%;
+    max-width: 412px;
+    height: 88vh;
+    max-height: 840px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    padding: 36px 28px;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 131, 79, 0.1) 0%, rgba(233, 87, 30, 0.05) 50%, rgba(42, 27, 78, 0.3) 100%);
+    border-radius: 40px;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 3px solid rgba(255, 255, 255, 0.08);
+    outline: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.6),
+        inset 0 1px 2px rgba(255, 255, 255, 0.2),
+        0 0 40px rgba(233, 87, 30, 0.15); 
+}
+
+/* ==========================================================================
+   2. HEADER SECTION
+   ========================================================================== */
+.page-header {
+    text-align: left;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+    opacity: 0.6;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.main-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+/* ==========================================================================
+   3. EQUALIZER PROGRESS BARS SECTION
+   ========================================================================== */
+.equalizer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 32px; /* Jarak renggang antar parameter skill */
+    flex-grow: 1;
+    justify-content: center; /* Memposisikan list bar tepat di area tengah */
+    margin-top: -30px;
+}
+
+.skill-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Penataan Teks Informasi Judul Skill & Angka Persen */
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: #ffffff;
+}
+
+.skill-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.skill-num {
+    opacity: 0.4; /* Angka urutan (01, 02, dst) dibuat redup sesuai mockup */
+    font-size: 16px;
+}
+
+.skill-percentage {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.5px;
+}
+
+/* Lintasan Background Bar (Gelap Transparan) */
+.progress-track {
+    width: 100%;
+    height: 16px; /* Ketebalan kapsul bar */
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Pengaturan Dasar Pengisi Bar Neon + Animasi Mengisi Otomatis */
+.progress-bar {
+    height: 100%;
+    border-radius: 20px;
+    width: 0%; /* Dimulai dari nol untuk memicu efek animasi */
+    animation: loadBar 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.2s; /* Jeda sedikit setelah halaman termuat */
+}
+
+/* --- PEWARNAAN NEON GRADASI SESUAI MOCKUP --- */
+.bar-interpersonal {
+    background: linear-gradient(90deg, #ff416c, #ff4b2b);
+    box-shadow: 0 0 12px rgba(255, 75, 43, 0.4);
+}
+
+.bar-intellectual {
+    background: linear-gradient(90deg, #7f00ff, #e100ff);
+    box-shadow: 0 0 12px rgba(225, 0, 255, 0.4);
+}
+
+.bar-leadership {
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    box-shadow: 0 0 12px rgba(0, 114, 255, 0.4);
+}
+
+.bar-global {
+    background: linear-gradient(90deg, #0ba360, #3cba92);
+    box-shadow: 0 0 12px rgba(60, 186, 146, 0.4);
+}
+
+/* Interaktivitas: Sedikit bersinar lebih terang jika bar disorot mouse */
+.skill-group:hover .progress-bar {
+    filter: brightness(1.15);
+    transform: scaleY(1.05);
+    transition: all 0.2s ease;
+}
+
+/* ==========================================================================
+   4. NAVIGATION & PAGINATION FOOTER
+   ========================================================================== */
+.navigation-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.btn-back {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    opacity: 0.5;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    opacity: 1;
+    transform: translateX(-2px);
+}
+
+.pagination-dots {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    width: 22px;
+    height: 6px;
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+
+.btn-next {
+    width: 48px;
+    height: 48px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #121118;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-next:hover {
+    transform: scale(1.1);
+    background-color: #ffeae0;
+    color: #e9571e;
+}
+
+.arrow-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* ==========================================================================
+   5. KEYFRAME ANIMATIONS & RESPONSIVE BREAKPOINT
+   ========================================================================== */
+@keyframes loadBar {
+    to {
+        width: var(--target-width); /* Mengisi otomatis hingga variabel CSS target tercapai */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+        background: radial-gradient(circle at 30% 70%, #ff834f 0%, #e9571e 35%, #2a1b4e 100%);
+    }
+    .mobile-container {
+        width: 100vw;
+        height: 100vh;
+        max-height: none;
+        border-radius: 0;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        padding: 40px 24px 30px 24px;
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+}

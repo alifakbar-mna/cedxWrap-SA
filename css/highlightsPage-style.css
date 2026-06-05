@@ -1,0 +1,315 @@
+/* ==========================================================================
+   1. RESET & BASE STYLES (CEdX UC THEME CONSISTENCY)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Tetap sinkron dengan gradasi radial tema besar CEdX UC */
+    background: radial-gradient(circle at 30% 70%, #ff834f 0%, #e9571e 35%, #2a1b4e 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Pola Grid Digital Halus Latar Belakang */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+/* Bingkai Smartphone Flagship Tiruan */
+.mobile-container {
+    width: 100%;
+    max-width: 412px;
+    height: 88vh;
+    max-height: 840px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    padding: 36px 24px; /* Padding samping disesuaikan agar list muat lega */
+    background: radial-gradient(circle at 50% 50%, rgba(255, 131, 79, 0.1) 0%, rgba(233, 87, 30, 0.05) 50%, rgba(42, 27, 78, 0.3) 100%);
+    border-radius: 40px;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 3px solid rgba(255, 255, 255, 0.08);
+    outline: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.6),
+        inset 0 1px 2px rgba(255, 255, 255, 0.2),
+        0 0 40px rgba(233, 87, 30, 0.15); 
+}
+
+/* ==========================================================================
+   2. HEADER SECTION
+   ========================================================================== */
+.page-header {
+    text-align: left;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+    opacity: 0.6;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.main-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+/* ==========================================================================
+   3. HIGHLIGHTS LIST & CARDS (DENGAN HOVER EFFECT LINGKARAN)
+   ========================================================================== */
+.highlights-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+    overflow-y: auto; /* Mengantisipasi jika layar HP pendek, list bisa di-scroll rapi */
+    padding-right: 4px;
+}
+
+/* Sembunyikan scrollbar bawaan agar estetika iOS/Android terjaga */
+.highlights-list::-webkit-scrollbar {
+    width: 0px;
+}
+
+/* Wrapper Utama Per Baris (Lingkaran + Kartu) */
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* --- ELEMEN LINGKARAN KUNING DI KIRI --- */
+.status-indicator {
+    width: 14px;
+    height: 14px;
+    border: 2px solid #ffd269; /* Lingkaran Kuning Emas tipis default */
+    border-radius: 50%;
+    flex-shrink: 0;
+    background-color: transparent;
+    box-shadow: 0 0 8px rgba(255, 210, 105, 0.2);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- AKSI HOVER: Saat .highlight-item disentuh, lingkaran terisi full bolder --- */
+.highlight-item:hover .status-indicator {
+    background-color: #ffd269; /* Menjadi penuh warna kuning */
+    box-shadow: 0 0 14px rgba(255, 210, 105, 0.8); /* Efek bersinar terang */
+    transform: scale(1.1);
+}
+
+/* Desain Dasar Kartu Kegiatan */
+.highlight-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 14px 16px;
+    flex-grow: 1;
+    transition: all 0.25s ease;
+}
+
+/* Efek angkat kartu sedikit saat di-hover */
+.highlight-item:hover .highlight-card {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(2px);
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    text-align: left;
+}
+
+.activity-title {
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.2px;
+}
+
+/* --- BADGES / LABELS VARIATIONS (CEdX STYLE COLOR) --- */
+.badge {
+    font-size: 9px;
+    font-weight: 800;
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.tag-icon {
+    font-size: 8px;
+    opacity: 0.8;
+}
+
+/* Pewarnaan Tag Kategori Berdasarkan Mockup */
+.badge-workshop { background-color: #d82b6b; }
+.badge-seminar  { background-color: #b72183; }
+.badge-camp     { background-color: #aa1743; }
+.badge-social   { background-color: #a12361; }
+.badge-competition { background-color: #bd235b; }
+
+/* --- KOTAK POIN (PTS BOX) DI SEBELAH KANAN --- */
+.points-box {
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    min-width: 50px;
+    height: 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.pts-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: #ffd269; /* Angka PTS Kuning Emas ikonik */
+    line-height: 1;
+}
+
+.pts-label {
+    font-size: 8px;
+    font-weight: 700;
+    color: #ffffff;
+    opacity: 0.4;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   4. NAVIGATION & PAGINATION FOOTER
+   ========================================================================== */
+.navigation-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn-back {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    opacity: 0.5;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    opacity: 1;
+    transform: translateX(-2px);
+}
+
+.pagination-dots {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    width: 22px;
+    height: 6px;
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+
+.btn-next {
+    width: 48px;
+    height: 48px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #121118;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-next:hover {
+    transform: scale(1.1);
+    background-color: #ffeae0;
+    color: #e9571e;
+}
+
+.arrow-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* ==========================================================================
+   5. RESPONSIVE BREAKPOINT (SCREEN MELEBUR DI SMARTPHONE NYATA)
+   ========================================================================== */
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+        background: radial-gradient(circle at 30% 70%, #ff834f 0%, #e9571e 35%, #2a1b4e 100%);
+    }
+    .mobile-container {
+        width: 100vw;
+        height: 100vh;
+        max-height: none;
+        border-radius: 0;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        padding: 40px 20px 30px 20px;
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+}

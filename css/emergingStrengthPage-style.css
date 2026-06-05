@@ -1,0 +1,281 @@
+/* ==========================================================================
+   1. RESET & BASE STYLES (CEdX UC THEME CONSISTENCY)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle at 30% 70%, #ff834f 0%, #e9571e 35%, #2a1b4e 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+.mobile-container {
+    width: 100%;
+    max-width: 412px;
+    height: 88vh;
+    max-height: 840px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    padding: 36px 24px;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 131, 79, 0.1) 0%, rgba(233, 87, 30, 0.05) 50%, rgba(42, 27, 78, 0.3) 100%);
+    border-radius: 40px;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 3px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(233, 87, 30, 0.15); 
+}
+
+/* ==========================================================================
+   2. HEADER SECTION
+   ========================================================================== */
+.page-header {
+    text-align: left;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+.subtitle {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+    opacity: 0.6;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.main-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.header-quote {
+    font-style: italic;
+    font-size: 13px;
+    color: #ffffff;
+    opacity: 0.7;
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   3. STRENGTH CARDS LIST
+   ========================================================================== */
+.strength-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+    margin-bottom: 16px;
+}
+
+/* Container Utama Per Baris Kartu */
+.strength-card-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 14px 16px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Efek Hover Glassmorphism Interaktif */
+.strength-card-wrapper:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* --- LINGKARAN IKON KIRI --- */
+.icon-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+}
+
+.icon-circle svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Skema Pewarnaan Garis Lingkaran & Ikon */
+.icon-yellow { color: #ffd269; border-color: rgba(255, 210, 105, 0.3); }
+.icon-blue   { color: #00c6ff; border-color: rgba(0, 198, 255, 0.3); }
+.icon-purple { color: #b72183; border-color: rgba(183, 33, 131, 0.3); }
+.icon-pink   { color: #ff416c; border-color: rgba(255, 65, 108, 0.3); }
+.icon-green  { color: #3cba92; border-color: rgba(60, 186, 146, 0.3); }
+
+/* --- DETAIL INFORMASI TEKS --- */
+.skill-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.skill-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+}
+
+.skill-tag {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* Pewarnaan Teks Label */
+.text-yellow { color: #ffd269; }
+.text-blue   { color: #00c6ff; }
+.text-purple { color: #e100ff; }
+.text-pink   { color: #ff416c; }
+.text-green  { color: #3cba92; }
+
+/* --- KOTAK NILAI (SCORE BOX) KANAN --- */
+.score-box {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==========================================================================
+   4. NAVIGATION FOOTER
+   ========================================================================== */
+.navigation-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.btn-back {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    opacity: 0.5;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    opacity: 1;
+    transform: translateX(-2px);
+}
+
+.pagination-dots {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    width: 22px;
+    height: 6px;
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+
+.btn-next {
+    width: 48px;
+    height: 48px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #121118;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-next:hover {
+    transform: scale(1.1);
+    background-color: #ffeae0;
+    color: #e9571e;
+}
+
+.arrow-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* ==========================================================================
+   5. RESPONSIVE MOBILE MQ
+   ========================================================================== */
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+    }
+    .mobile-container {
+        width: 100vw;
+        height: 100vh;
+        max-height: none;
+        border-radius: 0;
+        border: none;
+        padding: 40px 20px 30px 20px;
+        background: radial-gradient(circle at 30% 70%, #ff834f 0%, #e9571e 35%, #2a1b4e 100%);
+    }
+}

@@ -1,0 +1,292 @@
+/* ==========================================================================
+   1. RESET & BASE STYLES (CEdX UC THEME CONSISTENCY)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle at 30% 70%, #ff834f 0%, #e9571e 35%, #2a1b4e 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Pola Grid Digital Latar Belakang Luar */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+/* Bingkai Smartphone Flagship Tiruan */
+.mobile-container {
+    width: 100%;
+    max-width: 412px;
+    height: 88vh;
+    max-height: 840px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    padding: 36px 24px;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 131, 79, 0.1) 0%, rgba(233, 87, 30, 0.05) 50%, rgba(42, 27, 78, 0.3) 100%);
+    border-radius: 40px;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 3px solid rgba(255, 255, 255, 0.08);
+    outline: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.6),
+        inset 0 1px 2px rgba(255, 255, 255, 0.2),
+        0 0 40px rgba(233, 87, 30, 0.15); 
+}
+
+/* ==========================================================================
+   2. ARCHETYPE CARD WRAPPER
+   ========================================================================== */
+.archetype-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    width: 100%;
+    padding: 10px 0;
+}
+
+/* Kartu Utama: Menggunakan Warna Gradasi Oranye Semarak Khas Universitas Ciputra */
+.archetype-card {
+    width: 100%;
+    background: linear-gradient(135deg, #ff512f 0%, #dd2476 100%);
+    border-radius: 28px;
+    padding: 32px 24px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(221, 36, 118, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 90%;
+    min-height: 480px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+/* Efek Interaktif Mengembang Saat Kartu Disorot */
+.archetype-card:hover {
+    transform: scale(1.03) translateY(-4px);
+    box-shadow: 0 30px 50px rgba(221, 36, 118, 0.4), 0 0 30px rgba(255, 81, 47, 0.3);
+}
+
+/* --- TAG ATAS: ARCHETYPE UNLOCKED --- */
+.unlocked-tag {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 1.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.target-icon {
+    font-size: 11px;
+}
+
+/* --- STIKER MIRING: RARE FIND --- */
+.rare-badge {
+    position: absolute;
+    top: 55px;
+    right: 35px;
+    background-color: #fff677; /* Warna kuning stabilo kontras */
+    color: #121118;
+    font-size: 9px;
+    font-weight: 900;
+    padding: 4px 10px;
+    border-radius: 6px;
+    transform: rotate(12deg); /* Efek miring mading / scrapbook style */
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+    letter-spacing: 0.5px;
+}
+
+/* --- AREA STRUKTUR IKON --- */
+.archetype-icon-wrapper {
+    margin: 20px 0;
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+.archetype-icon {
+    width: 72px;
+    height: 72px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+/* --- TYPOGRAPHY --- */
+.intro-text {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    opacity: 0.8;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+}
+
+.archetype-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    color: #ffffff;
+    line-height: 0.95;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* --- KOTAK QUOTE DI BAGIAN BAWAH KARTU --- */
+.quote-box {
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 18px;
+    padding: 20px 18px;
+    position: relative;
+    width: 100%;
+}
+
+.quote-mark {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 2px;
+    left: 14px;
+    line-height: 1;
+}
+
+.quote-text {
+    font-size: 13px;
+    color: #ffffff;
+    line-height: 1.5;
+    font-weight: 500;
+    opacity: 0.95;
+    padding: 0 6px;
+}
+
+/* ==========================================================================
+   3. NAVIGATION & PAGINATION FOOTER
+   ========================================================================== */
+.navigation-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-back {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    opacity: 0.5;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    opacity: 1;
+    transform: translateX(-2px);
+}
+
+.pagination-dots {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    width: 22px;
+    height: 6px;
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+
+.btn-next {
+    width: 48px;
+    height: 48px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #121118;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-next:hover {
+    transform: scale(1.1);
+    background-color: #ffeae0;
+    color: #e9571e;
+}
+
+.arrow-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* ==========================================================================
+   4. RESPONSIVE BREAKPOINT
+   ========================================================================== */
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+        background: radial-gradient(circle at 30% 70%, #ff834f 0%, #e9571e 35%, #2a1b4e 100%);
+    }
+    .mobile-container {
+        width: 100vw;
+        height: 100vh;
+        max-height: none;
+        border-radius: 0;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        padding: 40px 24px 30px 24px;
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+    .slide-arrow {
+        /* Mencegah tombol panah keluar menembus batas layar asli HP */
+        width: 36px;
+        height: 36px;
+    }
+    .arrow-left { left: 8px; }
+    .arrow-right { right: 8px; }
+}

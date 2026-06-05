@@ -1,0 +1,219 @@
+/* ==========================================================================
+   1. RESET & BASE STYLES (BACKGROUND UTAMA)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Menggunakan asas gradasi CEdX UC yang dinamis untuk background dasar browser */
+    background: radial-gradient(circle at 70% 80%, #ff834f 0%, #e9571e 40%, #5d44f7 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Aksen Geometris Grid Halus di Latar Belakang Luar */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   2. SIMULASI BORDER SMARTPHONE (CEdX UC MODERN FRAME)
+   ========================================================================== */
+.mobile-container {
+    width: 100%;
+    max-width: 412px; /* Standar lebar smartphone modern */
+    height: 88vh;     /* Tinggi proporsional layar HP */
+    max-height: 840px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Memosisikan teks cerita tepat di tengah skrin */
+    position: relative;
+    z-index: 1;
+    
+    /* --- PANDUAN BINGKAI SMARTPHONE --- */
+    padding: 36px 28px;
+    /* Efek gradasi di dalam hape dibuat semi-transparan agar menyatu dengan background browser */
+    background: radial-gradient(circle at 70% 80%, rgba(255, 131, 79, 0.15) 0%, rgba(233, 87, 30, 0.1) 40%, rgba(93, 68, 247, 0.2) 100%);
+    border-radius: 40px; /* Sudut melengkung ekstrem khas HP modern */
+    
+    /* Efek Kaca Frosting & Border Ganda agar Terpisah dari BG Luar */
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 3px solid rgba(255, 255, 255, 0.08);
+    outline: 1px solid rgba(0, 0, 0, 0.3);
+    
+    /* Efek Bayangan (Shadow) Tebal & Glow Lembut di Sekitar Bingkai */
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.6),
+        inset 0 1px 2px rgba(255, 255, 255, 0.2),
+        0 0 40px rgba(233, 87, 30, 0.15); 
+}
+
+/* ==========================================================================
+   3. TYPOGRAPHY (STORYTELLING STYLE)
+   ========================================================================== */
+.story-content {
+    text-align: center;
+    color: #ffffff;
+    animation: fadeInUp 0.8s ease-out; /* Kesan animasi teks muncul lembut */
+}
+
+.headline-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 64px; /* Ukuran besar dan tegas sesuai imej mockup */
+    letter-spacing: 2px;
+    line-height: 1;
+    margin-bottom: 16px;
+    background: linear-gradient(180deg, #ffffff 0%, #ffeae0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+}
+
+.subheadline-text {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 4px; /* Efek tulisan renggang bergaya sinematik */
+    color: #ffffff;
+    opacity: 0.8;
+    text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   4. NAVIGATION FOOTER (BACK & NEXT BUTTONS INSIDE FRAME)
+   ========================================================================== */
+.navigation-footer {
+    position: absolute;
+    bottom: 36px;
+    left: 28px;  /* Ditambahkan left agar footer melebar penuh sesuai padding HP */
+    right: 28px; /* Ditambahkan right */
+    display: flex;
+    justify-content: space-between; /* Membuat Back di kiri ujung, Next di kanan ujung */
+    align-items: center;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Styling Tombol Back Baru (Menyamakan style dengan totalActivityPage) */
+.btn-back {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    opacity: 0.5;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.btn-back:hover {
+    opacity: 1;
+    transform: translateX(-2px); /* Efek bergeser sedikit ke kiri saat di-hover */
+}
+
+/* Tombol Lingkaran Selanjutnya (Tetap seperti sebelumnya) */
+.btn-next-circle {
+    width: 56px;
+    height: 56px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-next-circle:hover {
+    background-color: #ffffff;
+    color: #e9571e;
+    transform: scale(1.08);
+    box-shadow: 0 12px 28px rgba(233, 87, 30, 0.3);
+}
+
+.btn-next-circle:active {
+    transform: scale(0.95);
+}
+
+.arrow-icon {
+    width: 22px;
+    height: 22px;
+    transition: transform 0.3s ease;
+}
+
+.btn-next-circle:hover .arrow-icon {
+    transform: translateX(2px);
+}
+
+/* ==========================================================================
+   5. ANIMATIONS & RESPONSIVE BREAKPOINT
+   ========================================================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Penyesuaian Responsif: Jika dibuka langsung di layar HP asli, bingkai otomatis melebur */
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+        background: radial-gradient(circle at 70% 80%, #ff834f 0%, #e9571e 40%, #5d44f7 100%);
+    }
+    .mobile-container {
+        width: 100vw;
+        height: 100vh;
+        max-height: none;
+        border-radius: 0;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        padding: 40px 24px;
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+    .navigation-footer {
+        bottom: 40px;
+        right: 24px;
+    }
+}

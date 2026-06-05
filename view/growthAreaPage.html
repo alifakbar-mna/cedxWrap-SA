@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leading Growth Area - Student Development Snapshot</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Menghubungkan ke file CSS Baru (keluar folder view via '../') -->
+    <link rel="stylesheet" href="../css/growthAreaPage-style.css">
+</head>
+<body>
+
+    <div class="mobile-container">
+        
+        <!-- Header Atas -->
+        <header class="page-header">
+            <p class="subtitle">SKILL EQUALIZER</p>
+            <h1 class="main-title">LEADING GROWTH AREA</h1>
+        </header>
+
+        <!-- Container Indikator Kemajuan Progres (Equalizer Bars) -->
+        <main class="equalizer-section">
+            
+            <!-- Skill 01 -->
+            <div class="skill-group">
+                <div class="skill-info">
+                    <span class="skill-name"><span class="skill-num">01</span> INTERPERSONAL SKILL</span>
+                    <span class="skill-percentage">85%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-bar bar-interpersonal" style="--target-width: 85%;"></div>
+                </div>
+            </div>
+
+            <!-- Skill 02 -->
+            <div class="skill-group">
+                <div class="skill-info">
+                    <span class="skill-name"><span class="skill-num">02</span> INTELLECTUAL & CREATIVE</span>
+                    <span class="skill-percentage">92%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-bar bar-intellectual" style="--target-width: 92%;"></div>
+                </div>
+            </div>
+
+            <!-- Skill 03 -->
+            <div class="skill-group">
+                <div class="skill-info">
+                    <span class="skill-name"><span class="skill-num">03</span> LEADERSHIP</span>
+                    <span class="skill-percentage">64%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-bar bar-leadership" style="--target-width: 64%;"></div>
+                </div>
+            </div>
+
+            <!-- Skill 04 -->
+            <div class="skill-group">
+                <div class="skill-info">
+                    <span class="skill-name"><span class="skill-num">04</span> GLOBAL CITIZENSHIP</span>
+                    <span class="skill-percentage">45%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-bar bar-global" style="--target-width: 45%;"></div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Footer Navigasi Bawah (Back, Pagination Dots, Next Button) -->
+        <footer class="navigation-footer">
+            <!-- Tombol Kembali menuju highlightsPage.html -->
+            <a href="highlightsPage.html" class="btn-back">BACK</a>
+            
+            <!-- Indikator Slide (Dot ke-4 Aktif) -->
+            <div class="pagination-dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot active"></span> <!-- Dot aktif bergeser ke halaman 4 -->
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+            <!-- Tombol Selanjutnya -->
+            <a href="../view/archetypePage.html" class="btn-next" aria-label="Next Page">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="arrow-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+            </a>
+        </footer>
+        
+    </div>
+
+</body>
+</html>

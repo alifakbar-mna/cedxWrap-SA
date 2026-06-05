@@ -1,0 +1,323 @@
+/* ==========================================================================
+   1. RESET & BASE STYLES (BACKGROUND UPDATE)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* UPDATE: Mengganti background hitam kaku dengan gradasi oranye CEdX UC yang dinamis */
+    background: radial-gradient(circle at 30% 20%, #ff834f 0%, #e9571e 50%, #b83605 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Aksen Geometris Tambahan pada Background agar Lebih Bertekstur (Khas Tema UC) */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+/* Container pembungkus simulasi layar HP */
+.mobile-container {
+    width: 100%;
+    max-width: 410px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ==========================================================================
+   2. TICKET STRUCTURE
+   ========================================================================== */
+.ticket-card {
+    width: 100%;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(117, 31, 0, 0.5); /* Shadow disesuaikan dengan ambience warna oranye */
+}
+
+/* --- BAGIAN ATAS: HEADER & ANIMASI ROTASI CEdX UC --- */
+.ticket-header {
+    position: relative;
+    height: 200px;
+    background-color: #1a0b05;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* UPDATE: Mengubah warna persegi panjang berputar ke tema CEdX UC (Oranye, Ungu Sign-In, & Deep Navy) */
+.rotating-gradient {
+    position: absolute;
+    width: 190%;
+    height: 190%;
+    background: conic-gradient(
+        from 0deg,
+        #e9571e 0%,    /* Orange UC */
+        #5d44f7 25%,   /* Purple Sign-In CEdX */
+        #1e1135 50%,   /* Deep Tech Dark */
+        #e9571e 75%,   /* Orange UC */
+        #5d44f7 100%   /* Purple Sign-In CEdX */
+    );
+    animation: rotateBg 10s linear infinite;
+    z-index: 1;
+}
+
+@keyframes rotateBg {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Lapisan Konten di Atas Animasi */
+.header-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #ffffff;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.journey-text {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    opacity: 0.95;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.main-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 38px;
+    line-height: 0.95;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #ffffff 0%, #ffeae0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
+}
+
+/* --- BAGIAN TENGAH: GARIS SOBEKAN TIKET (PERFORATED) --- */
+.ticket-divider {
+    position: relative;
+    height: 20px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Lubang Setengah Lingkaran disesuaikan dengan warna background baru */
+.notch {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #e9571e; /* Ikut warna dominan background luar agar menyatu */
+    border-radius: 50%;
+    z-index: 3;
+}
+.notch-left { left: -10px; }
+.notch-right { right: -10px; }
+
+/* Garis Putus-putus Sobekan Tiket */
+.dashed-line {
+    width: 100%;
+    height: 2px;
+    border-top: 2px dashed #e1e8ed;
+    margin: 0 15px;
+}
+
+/* --- BAGIAN BAWAH: ISI TIKET --- */
+.ticket-body {
+    background-color: #ffffff;
+    padding: 0 28px 28px 28px;
+    text-align: center;
+}
+
+/* Avatar Profil */
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    margin-top: -10px;
+    margin-bottom: 16px;
+}
+
+.avatar-circle {
+    width: 76px;
+    height: 76px;
+    background-color: #eef2f5;
+    border-radius: 50%;
+    border: 3px solid #1a0b05;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Pengaturan Teks Info */
+.label-text {
+    font-size: 11px;
+    color: #8a94a6;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.student-name {
+    font-size: 24px;
+    color: #1a0b05;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+}
+
+.horizontal-line {
+    width: 100%;
+    height: 2px;
+    background-color: #1a0b05;
+    margin-bottom: 16px;
+}
+
+/* Layout Grid Kolom NIM & Status */
+.info-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.info-item-right {
+    text-align: right;
+}
+
+.value-text {
+    font-size: 18px;
+    color: #1a0b05;
+}
+
+.bold-text {
+    font-weight: 800;
+}
+
+/* Badge Status (Semester) */
+.status-badge {
+    display: inline-block;
+    background-color: #5d44f7; /* Menggunakan aksen ungu CEdX agar senada dengan header kartu */
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-top: 2px;
+}
+
+.thin-line {
+    background-color: #f0f0f2;
+    margin-bottom: 18px;
+}
+
+/* --- BARCODE SECTION --- */
+.barcode-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Tiruan Barcode */
+.fake-barcode {
+    width: 170px;
+    height: 42px;
+    background: repeating-linear-gradient(
+        90deg,
+        #1a0b05 0px, #1a0b05 2px,
+        #fff 2px, #fff 4px,
+        #1a0b05 4px, #1a0b05 5px,
+        #fff 5px, #fff 8px,
+        #1a0b05 8px, #1a0b05 9px,
+        #fff 9px, #fff 10px,
+        #1a0b05 10px, #1a0b05 13px,
+        #fff 13px, #fff 14px
+    );
+    opacity: 0.85;
+}
+
+.barcode-footer {
+    font-size: 10px;
+    color: #a0aab8;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   3. BUTTON ACTION (WHITE CONTRAST VERSION)
+   ========================================================================== */
+.btn-snapshot {
+    width: 100%;
+    height: 58px;
+    /* UPDATE: Tombol diubah menjadi putih kontras karena background utama aplikasi sekarang sudah oranye tebal */
+    background-color: #ffffff; 
+    color: #e9571e; /* Teks berwarna oranye UC */
+    border: none;
+    border-radius: 50px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-snapshot:hover {
+    background-color: #ffeae0; /* Berubah menjadi peach soft saat di-hover */
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.btn-snapshot:active {
+    transform: translateY(1px);
+}
+
+.arrow-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.btn-snapshot:hover .arrow-icon {
+    transform: translateX(4px);
+}
