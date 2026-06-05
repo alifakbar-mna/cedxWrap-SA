@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Words of Wisdom - Head of Program</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Menghubungkan ke file CSS Baru -->
+    <link rel="stylesheet" href="../css/headOfProgramPage-style.css">
+</head>
+<body>
+
+    <div class="mobile-container">
+        
+        <!-- Header Atas -->
+        <header class="page-header">
+            <p class="subtitle">WORDS OF WISDOM</p>
+            <h1 class="main-title">HEAD OF PROGRAM</h1>
+        </header>
+
+        <!-- Area Konten Utama (Lecturer Message Card) -->
+        <main class="wisdom-container">
+            
+            <div class="wisdom-card">
+                
+                <!-- Profil Singkat Dosen / Kaprodi -->
+                <div class="profile-section">
+                    <div class="avatar-wrapper">
+                        <!-- Ikon Group/User Representatif (SVG) -->
+                        <svg class="avatar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                    <div class="profile-info">
+                        <div class="name-row">
+                            <h2 class="lecturer-name">Dr. Sarah Wijaya</h2>
+                            <!-- Centang Verifikasi Biru (SVG) -->
+                            <svg class="verified-badge" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                        </div>
+                        <p class="lecturer-role">HEAD OF VCD PROGRAM</p>
+                    </div>
+                </div>
+
+                <!-- Container Pemutar Video (Video Player Container) -->
+                <div class="video-preview-box">
+                    <div class="video-overlay">
+                        <!-- Tombol Putar Tengah -->
+                        <button class="btn-play-video" aria-label="Play Video">
+                            <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </button>
+                        <span class="play-label">PLAY VIDEO</span>
+                    </div>
+                    
+                    <!-- Indikator Audio Status (Pojok Kanan Bawah) -->
+                    <div class="audio-status-tag">
+                        <svg class="volume-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+                        </svg>
+                        <span>ON</span>
+                    </div>
+                </div>
+
+                <!-- Blok Kutipan Motivasi (Blockquote) -->
+                <div class="quote-section">
+                    <!-- Ikon Tanda Petik Dekoratif Ganda (SVG) -->
+                    <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                    </svg>
+                    <blockquote class="wisdom-quote">
+                        "This semester was full of challenges, but seeing your growth is our greatest pride. You are the future of this industry. Keep creating, keep innovating!"
+                    </blockquote>
+                </div>
+
+            </div>
+
+        </main>
+
+        <!-- Footer Navigasi Bawah -->
+        <footer class="navigation-footer">
+            <!-- Kembali ke halaman Room For Growth -->
+            <a href="roomForGrowthPage.html" class="btn-back">BACK</a>
+            
+            <!-- Indikator Slide (Dot ke-9 Aktif) -->
+            <div class="pagination-dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot active"></span> <!-- Dot aktif bergeser ke urutan ke-9 -->
+                <span class="dot"></span>
+            </div>
+
+            <!-- Tombol Selanjutnya -->
+            <a href="../view/finalCheckpointPage.html" class="btn-next" aria-label="Next Page">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="arrow-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+            </a>
+        </footer>
+        
+    </div>
+
+</body>
+</html>

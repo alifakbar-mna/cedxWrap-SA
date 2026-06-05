@@ -1,0 +1,305 @@
+/* ==========================================================================
+   1. RESET & BASE STYLES (CEdX UC THEME CONSISTENCY)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle at 30% 70%, #ff834f 0%, #e9571e 35%, #2a1b4e 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Pola Grid Digital Latar Belakang Luar */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+.mobile-container {
+    width: 100%;
+    max-width: 412px;
+    height: 88vh;
+    max-height: 840px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    padding: 36px 24px 28px 24px;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 131, 79, 0.05) 0%, rgba(233, 87, 30, 0.02) 60%, rgba(42, 27, 78, 0.3) 100%);
+    border-radius: 40px;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 3px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(233, 87, 30, 0.1); 
+}
+
+/* ==========================================================================
+   2. HEADER SECTION
+   ========================================================================== */
+.page-header {
+    text-align: left;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+.subtitle {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.main-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   3. POSTER CARD AREA & FLOATING COMPONENT
+   ========================================================================== */
+.share-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+    width: 100%;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+/* Tombol Kembali Melingkar Sisi Kiri */
+.floating-btn-back {
+    position: absolute;
+    left: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    z-index: 10;
+    transition: all 0.2s ease;
+}
+
+.floating-btn-back:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    left: -16px;
+}
+
+.back-arrow-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* Bingkai Kartu Luar Putih */
+.poster-card-frame {
+    width: calc(100% - 20px);
+    margin-left: auto; /* Mendorong frame ke kanan agar seimbang dengan floating button */
+    background-color: #ffffff;
+    border-radius: 28px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+}
+
+/* Canvas Dalam Poster Gelap */
+.poster-canvas {
+    width: 100%;
+    aspect-ratio: 1 / 1.15;
+    background: radial-gradient(circle at 80% 20%, #2f2a4a 0%, #111014 100%);
+    border-radius: 18px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.archetype-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 1.2px;
+    margin-bottom: 6px;
+}
+
+.archetype-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 38px;
+    color: #f7df94; /* Warna kuning emas khas arketipe */
+    line-height: 0.95;
+    letter-spacing: 0.5px;
+}
+
+/* Baris Grid Dua Kotak Stat */
+.stats-grid-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+/* Kotak Stat Putih (Activities) */
+.stat-box-white {
+    background-color: #f5f5f7;
+    border: 1.5px solid #e2e2e8;
+    border-radius: 16px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Kotak Stat Hijau Mint (Growth) */
+.stat-box-green {
+    background-color: #7ee09e;
+    border: 1.5px solid #6bcf8b;
+    border-radius: 16px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-number-dark {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: #121118;
+    line-height: 1;
+}
+
+.stat-label-dark {
+    font-size: 9px;
+    font-weight: 800;
+    color: rgba(18, 17, 24, 0.5);
+    letter-spacing: 0.8px;
+    margin-top: 2px;
+}
+
+/* Label Brand Footer Tiket */
+.poster-brand-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 14px 4px 2px 4px;
+}
+
+.brand-left {
+    font-size: 9px;
+    font-weight: 700;
+    color: #a1a1aa;
+    letter-spacing: 0.5px;
+}
+
+.brand-right {
+    font-size: 9px;
+    font-weight: 800;
+    color: #71717a;
+}
+
+/* ==========================================================================
+   4. FULL WIDTH ACTION BUTTON (FOOTER)
+   ========================================================================== */
+.action-footer {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-save-poster {
+    width: 100%;
+    height: 54px;
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+    border-radius: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease;
+}
+
+.btn-save-poster span {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: #121118;
+    letter-spacing: 0.8px;
+    margin-top: 2px; /* Keselarasan font komersial */
+}
+
+.download-icon {
+    width: 18px;
+    height: 18px;
+    color: #121118;
+}
+
+.btn-save-poster:hover {
+    transform: translateY(-2px);
+    background-color: #f8f8fa;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.btn-save-poster:active {
+    transform: translateY(1px);
+}
+
+/* ==========================================================================
+   5. RESPONSIVE MOBILE MQ
+   ========================================================================== */
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+    }
+    .mobile-container {
+        width: 100vw;
+        height: 100vh;
+        max-height: none;
+        border-radius: 0;
+        border: none;
+        padding: 40px 24px 30px 24px;
+        background: radial-gradient(circle at 30% 70%, #ff834f 0%, #e9571e 35%, #2a1b4e 100%);
+    }
+    .floating-btn-back {
+        left: -6px;
+    }
+    .floating-btn-back:hover {
+        left: -6px;
+    }
+}
