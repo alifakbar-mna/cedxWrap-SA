@@ -28,7 +28,8 @@
                 </svg>
             </a>
 
-            <div class="poster-card-frame">
+            <!-- Elemen ini (.poster-card-frame) yang akan ditargetkan untuk didownload sesuai Screenshot 2026-06-05 at 10.47.55.jpg -->
+            <div class="poster-card-frame" id="poster-to-download">
                 
                 <div class="poster-canvas">
                     <p class="archetype-label">ARCHETYPE</p>
@@ -56,7 +57,8 @@
         </main>
 
         <footer class="action-footer">
-            <button type="button" class="btn-save-poster">
+            <!-- Menambahkan id untuk memicu fungsi klik di JavaScript -->
+            <button type="button" class="btn-save-poster" id="download-btn">
                 <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                     <polyline points="7 10 12 15 17 10"></polyline>
@@ -67,6 +69,40 @@
         </footer>
         
     </div>
+
+    <!-- 1. Memanggil Library html2canvas via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <!-- 2. Skrip Logic Eksekusi Download Gambar -->
+    <script>
+        document.getElementById('download-btn').addEventListener('click', function () {
+            // Targetkan hanya area bingkai putih poster saja
+            const posterElement = document.getElementById('poster-to-download');
+
+            // Konfigurasi html2canvas agar hasil render jernih dan beresolusi tinggi (HD)
+            const options = {
+                scale: 3,            // Menaikkan resolusi gambar 3x lipat agar tidak pecah/blur
+                useCORS: true,       // Mengaktifkan izin lintas asal jika ada aset gambar eksternal
+                backgroundColor: null // Menjaga agar background di luar border-radius tetap transparan
+            };
+
+            // Mengubah elemen HTML menjadi Canvas, lalu otomatis mendownloadnya
+            html2canvas(posterElement, options).then(function (canvas) {
+                // Mengonversi hasil canvas menjadi URL gambar PNG
+                const imageURl = canvas.toDataURL('image/png');
+                
+                // Membuat elemen anchor bayangan (sementara) di memori browser
+                const createDataAnchor = document.createElement('a');
+                createDataAnchor.href = imageURl;
+                
+                // Menentukan nama file hasil download saat disimpan oleh user
+                createDataAnchor.download = 'UC_Wrapped_Snapshot_2025.png';
+                
+                // Memicu trigger klik otomatis untuk memulai proses unduhan
+                createDataAnchor.click();
+            });
+        });
+    </script>
 
 </body>
 </html>
